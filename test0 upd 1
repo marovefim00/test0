@@ -1,0 +1,27 @@
+vvod = input().split()
+if len(vvod) != 3:
+    print("Ошибка: введите пример в формате '5 + 3'")
+    exit()
+try:
+    a = int(vvod[0])
+    b = int(vvod[2])
+except ValueError:
+    print("Ошибка: вводите только целые числа")
+    exit()
+op = vvod[1]
+if a < 1 or a > 10 or b < 1 or b > 10:
+    print("Ошибка: числа должны быть от 1 до 10")
+    exit()
+# Считаем результат в зависимости от знака
+if op == '+':
+    print(a + b)
+elif op == '-':
+    print(a - b)
+elif op == '*':
+    print(a * b)
+elif op == '/':
+    print(a // b)
+else:
+    # Если знак не +, -, * или /
+    print("Ошибка: неверная операция")
+    exit()
