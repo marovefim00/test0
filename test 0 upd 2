@@ -1,0 +1,37 @@
+def main():
+    # 1. Считываем строку и разбиваем её на части
+    user_input = input()
+    parts = user_input.split()
+
+    # 5. Проверка: если ввели не 3 элемента (число, знак, число), выкидываем ошибку
+    if len(parts) != 3:
+        raise Exception("Неверный формат")
+
+    # Раскладываем список по переменным
+    v1 = parts[0]
+    operator = parts[1]
+    v2 = parts[2]
+
+    # Превращаем строки в целые числа
+    a = int(v1)
+    b = int(v2)
+
+    # 2. Проверка диапазона от 1 до 10
+    if a < 1 or a > 10 or b < 1 or b > 10:
+        raise Exception("Числа должны быть от 1 до 10")
+
+    # Проверяем оператор и считаем результат
+    if operator == '+':
+        print(a + b)
+    elif operator == '-':
+        print(a - b)
+    elif operator == '*':
+        print(a * b)
+    elif operator == '/':
+        print(a // b)
+    else:
+        raise Exception("Неверная операция")
+
+
+if __name__ == "__main__":
+    main()
